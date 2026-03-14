@@ -9,10 +9,17 @@ def login():
         welcome_window = Tk()
         welcome_window.title("Welcome")
         welcome_window.geometry('400x200')
-        welcome_window.configure(bg='#00704A')
-        welcome_label = Label(welcome_window, text=f"Welcome, {email}!", 
-                              font=('Verdana', 20, 'bold'), bg='#000000', fg='white')
-        welcome_label.pack(pady=100)
+        welcome_window.configure(bg='black')
+        
+        welcome_label = Label(
+            welcome_window, 
+            text=f"Welcome, {email}!", 
+            font=('Verdana', 20, 'bold'), 
+            bg='black', 
+            fg='red'
+        )
+        welcome_label.pack(expand=True)
+        
         welcome_window.mainloop()
     else:
         error_label.config(text="Please enter email and password!")
@@ -20,38 +27,35 @@ def login():
 root = Tk()
 root.title("Student Form")
 root.geometry('500x500+0+0')
-root.configure(background='#00704A')
+root.configure(bg='black')
 
-# Image
 img = Image.open('ch7.jpg')
 resize_img = img.resize((100, 70))
 img = ImageTk.PhotoImage(resize_img)
-img_label = Label(root, image=img)
-img_label.pack(pady=10, padx=20)
+img_label = Label(root, image=img, bg='black')
+img_label.pack(pady=10)
 
-# Text label
-text_label = Label(root, text="Current WWE Sucks", font=('Cursive', 18, 'bold'), 
-                   bg='#000000', fg='white')
-text_label.pack(pady=10, padx=20)
+text_label = Label(
+    root, text="Current WWE Sucks", 
+    font=('Impact', 22, 'bold'), 
+    bg='black', fg='red'
+)
+text_label.pack(pady=10)
 
-# Email
-email_label = Label(root, text="Email", font=('Arial', 18, 'bold'), bg='#00704A', fg='white')
+email_label = Label(root, text="Email", font=('Arial', 16, 'bold'), bg='black', fg='white')
 email_label.pack(pady=(20, 5))
-email_entry = Entry(root, font=('Arial', 18, 'bold'), fg='white', bg='grey')
+email_entry = Entry(root, font=('Arial', 16, 'bold'), fg='black', bg='white')
 email_entry.pack(pady=(5, 10))
 
-# Password
-password_label = Label(root, text="Password", font=('Arial', 18, 'bold'), bg='#00704A', fg='white')
+password_label = Label(root, text="Password", font=('Arial', 16, 'bold'), bg='black', fg='white')
 password_label.pack(pady=(20, 5))
-password_entry = Entry(root, font=('Arial', 18, 'bold'), fg='white', bg='grey', show='*')
+password_entry = Entry(root, font=('Arial', 16, 'bold'), fg='black', bg='white', show='*')
 password_entry.pack(pady=(5, 10))
 
-# Error label
-error_label = Label(root, text="", font=('Arial', 12, 'bold'), bg='#00704A', fg='red')
+error_label = Label(root, text="", font=('Arial', 12, 'bold'), bg='black', fg='red')
 error_label.pack()
 
-# Login button
-login_btn = Button(root, text="Login", font=('Arial', 18, 'bold'), bg='#00704A', fg='white', command=login)
+login_btn = Button(root, text="Login", font=('Arial', 16, 'bold'), bg='red', fg='white', command=login)
 login_btn.pack(pady=(5, 10))
 
 root.mainloop()
