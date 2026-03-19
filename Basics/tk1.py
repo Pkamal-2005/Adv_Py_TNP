@@ -25,7 +25,7 @@ def login():
         error_label.config(text="Please enter email and password!")
 
 root = Tk()
-root.title("Student Form")
+root.title("Death Form")
 root.geometry('500x500+0+0')
 root.configure(bg='black')
 
